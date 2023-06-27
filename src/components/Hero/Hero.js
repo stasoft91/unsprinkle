@@ -1,10 +1,27 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
+const srcset = `
+    /images/hero-img.jpg 1x,
+    /images/hero-img@2x.jpg 2x,
+    /images/hero-img@3x.jpg 3x,
+    `;
+
+const srcsetForAvif = `
+    /images/hero-img.avif 1x,
+    /images/hero-img@2x.avif 2x,
+    /images/hero-img@3x.avif 3x,
+    `;
+
 const Hero = () => {
   return (
     <Wrapper>
-      <HeroImage src="/images/hero-img.jpg" />
+      <picture>
+        <source type="image/avif" srcSet={srcsetForAvif} />
+        <source type="image/jpeg" srcSet={srcset} />
+
+          <HeroImage src="/images/hero-img.jpg" alt="Hero image of Blue-eyed cat" />
+      </picture>
       <Swoop src="/swoop.svg" />
     </Wrapper>
   );
