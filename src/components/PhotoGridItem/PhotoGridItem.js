@@ -16,19 +16,12 @@ const PhotoGridItem = ({ id, src, alt, tags }) => {
       </Anchor>
       <Tags>
         {tags.map((tag) => (
-          <Tag key={tag}><TagWrapper>{tag}</TagWrapper></Tag>
+          <Tag key={tag}><>{tag}</></Tag>
         ))}
       </Tags>
     </article>
   );
 };
-
-const TagWrapper = styled.span`
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-`;
-
 
 const Anchor = styled.a`
   text-decoration: none;
@@ -46,11 +39,14 @@ const Image = styled.img`
 `;
 
 const Tags = styled.ul`
-  display: flex;
-  gap: 8px;
+  padding: 8px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const Tag = styled.li`
+  display: inline;
   padding: 4px 8px;
   background: var(--color-gray-300);
   font-size: 0.875rem;
@@ -60,6 +56,8 @@ const Tag = styled.li`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  
+  margin-right: 8px;
 `;
 
 export default PhotoGridItem;

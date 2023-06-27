@@ -19,8 +19,7 @@ const Hero = () => {
       <picture>
         <source type="image/avif" srcSet={srcsetForAvif} />
         <source type="image/jpeg" srcSet={srcset} />
-
-          <HeroImage src="/images/hero-img.jpg" alt="Hero image of Blue-eyed cat" />
+         <HeroImage src="/images/hero-img.jpg" alt="Example of Blue-eyed cat" />
       </picture>
       <Swoop src="/swoop.svg" />
     </Wrapper>
